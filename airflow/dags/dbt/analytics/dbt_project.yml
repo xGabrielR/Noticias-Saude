@@ -1,0 +1,33 @@
+
+name: 'analytics'
+version: '1.0.0'
+
+profile: 'analytics'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Run on DBT run level
+# Or in Table level with pre-hook
+#on-run-start:
+#  - "{{ call_incremental_procedure() }}"
+
+models:
+
+  analytics:
+  
+    silver:
+      +materialized: table
+      +schema: SILVER
+
+    gold:
+      +materialized: view
+      +schema: GOLD

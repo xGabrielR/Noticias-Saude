@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+
+  airflow:
+    build: .
+    depends_on:
+      - postgres
+    networks:
+      - airflow_network
+    ports:
+      - 8080:8080
+    volumes:
+      - airflow_logs:/root/airflow/logs
+      - airflow_dags:/root/airflow/dags
+
+  postgres:
+    image: postgres:13
+    container_name: postgres 
+    networks:
+      - airflow_network
+    environment:
+      POSTGRES_USER: airflow_user
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow_db
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_airflow_data:/var/lib/postgresql/data
+
+volumes:
+
+  postgres_airflow_data:
+    driver: local
+    name: postgres_airflow_data
+    driver_opts:
+      type: none
+      o: bind
+      device: ./pgdata
+
+  airflow_dags:
+    driver: local
+    name: airflow_dags
+    driver_opts:
+      type: none
+      o: bind
+      device: ./dags
+
+  airflow_logs:
+    driver: local
+    name: airflow_logs
+    driver_opts:
+      type: none
+      o: bind
+      device: ./logs
+  
+networks:
+  airflow_network:
+    driver: bridge

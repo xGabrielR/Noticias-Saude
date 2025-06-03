@@ -1,0 +1,13 @@
+analytics:
+  outputs:
+    dev:
+      account: ABC-ABC
+      database: NEWS_DB
+      password: AIRFLOW
+      role: AIRFLOW
+      schema: SILVER
+      threads: 1
+      type: snowflake
+      user: AIRFLOW
+      warehouse: AIRFLOW_WAREHOUSE
+  target: dev
