@@ -44,5 +44,7 @@ Como as novas publicações de notícias de saúde em fontes oficiais de dados (
 - Inclusão Digital: Acessibilidade da informação para públicos diversos.
 - Confiabilidade: Velocidade na tomada de decisão, com dados sempre atualizados.
 
+<img src="assets/workflow.png">
+
 Toda a solução de infraestrutura foi desenvolvida com Terraform integrado a AWS + Snowflake, além disso com a utilização do Python, Airflow, DBT e Snowflake Warehouse para as ferramentas de processamento, orquestração e documentação, por fim o Snowflake Cortex Service para a camada de PLN, VectorDB e RAG com Langchain e SQL. 
 
