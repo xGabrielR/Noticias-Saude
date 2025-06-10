@@ -26,7 +26,7 @@
 <h2>0. Problema de Negócio</h2>
 <hr>
 
-O principal problema enfrentado atualmente é a falta de acesso confiável a eventos realizados em relação a saúde pública no Brasil, muitas famílias se é que sabem que esta tendo algum evento de concientização, vacinação ou qualquer outro meio ou solução proposta pelo sistema de saúde da cidade em sua vizinhança devido a falta de tempo ou demais características que impedem essas famílias de obter essas informações de maneira fácil e simples.   
+O principal problema enfrentado atualmente é a falta de acesso confiável a eventos realizados em relação a saúde pública no Brasil, muitas famílias se é que sabem que esta tendo algum evento de conscientização, vacinação ou qualquer outro meio ou solução proposta pelo sistema de saúde da cidade em sua vizinhança devido a falta de tempo ou demais características que impedem essas famílias de obter essas informações de maneira fácil e simples.   
 
 O geógrafo brasileiro Milton Santos, descreve em seu célebre texto "As Cidadanias Mutiladas" que a democracia somente é efetiva quando atinge todo o corpo social, into é, quando os direitos são desfrutados por todos os cidadãos. Todavia, no contexto atual brasileiro, diante dos desafios ao acesso a uma plataforma de noticias de saúde pública, distanciam a população de direitos a notícias que todos deveriam ter acesso de uma forma simples e eficiente. Neste contexto, faz-se necessário uma solução unificadora para acesso a informação e que essa solução seja extremamente simples e acessível por meio de linguagem natural a todos os segmentos da sociedade brasileira. 
 
