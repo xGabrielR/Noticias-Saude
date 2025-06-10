@@ -9,7 +9,7 @@
 <h2>Sumário</h2>
 <hr>
 
-- [0. Problema de Negocio](#0-problema-de-negocio)
+- [0. Problema de Negócio](#0-problema-de-negócio)
 - [1. Solution Strategy and Assumptions Resume](#1-solution-strategy-and-assumptions-resume)
   - [1.1. Geral Project Overview](#11-geral-project-overview)
 - [2. Exploratory Data Analysis](#2-exploratory-data-analysis)
