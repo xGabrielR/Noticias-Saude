@@ -2,6 +2,8 @@
 
 ---
 
+<img src="assets/header.png">
+
 
 *"Solução Event Driven com Airflow e aplicação de Rag com Snowflake"*.
 
@@ -25,8 +27,6 @@
 <hr>
 
 O geógrafo brasileiro Milton Santos, descreve em seu célebre texto "As Cidadanias Mutiladas" que a democracia somente é efetiva quando atinge todo o corpo social, into é, quando os direitos são desfrutados por todos os cidadãos. Todavia, no contexto atual brasileiro, diante dos desafios ao acesso a uma plataforma de noticias de saúde pública, distanciam a população de direitos a notícias que todos deveriam ter acesso de uma forma simples e eficiente. Neste contexto, faz-se necessário uma solução unificadora para acesso a informação e que essa solução seja extremamente simples e acessível por meio de linguagem natural a todos os segmentos da sociedade brasileira. 
-
-<img src="assets/header.png">
 
 <h2>1. Estratégia de Solução</h2>
 <hr>
