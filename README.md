@@ -13,13 +13,6 @@
 
 - [0. Problema de Negócio](#0-problema-de-negócio)
 - [1. Estratégia de Solução](#1-estratégia-de-solução)
-  - [1.1. Geral Project Overview](#11-geral-project-overview)
-- [2. Exploratory Data Analysis](#2-exploratory-data-analysis)
-  - [2.1. Top 3 Business Hypothesis Validation](#21-top-3-business-hypothesis-validation)
-  - [2.2. Cluster Insiders Overview](#22-cluster-insiders-overview)
-- [3. Data Preparation](#3-data-preparation)
-  - [3.1. Embedding Clients Space](#31-embedding-clients-space)
-- [4. Machine Learning Metrics](#4-machine-learning-metrics)
 
 <hr>
 
