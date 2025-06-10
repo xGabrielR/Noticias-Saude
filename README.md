@@ -12,7 +12,7 @@
 <hr>
 
 - [0. Problema de Negócio](#0-problema-de-negócio)
-- [1. Solution Strategy and Assumptions Resume](#1-solution-strategy-and-assumptions-resume)
+- [1. Estratégia de Solução](#1-estratégia-de-solução)
   - [1.1. Geral Project Overview](#11-geral-project-overview)
 - [2. Exploratory Data Analysis](#2-exploratory-data-analysis)
   - [2.1. Top 3 Business Hypothesis Validation](#21-top-3-business-hypothesis-validation)
