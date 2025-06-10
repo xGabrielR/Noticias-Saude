@@ -1,4 +1,4 @@
-# Noticias Saude
+# 📰 | Plataforma de Notícias de Saúde
 
 ---
 
