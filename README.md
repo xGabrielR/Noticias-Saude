@@ -23,6 +23,8 @@ O principal problema enfrentado atualmente é a falta de acesso confiável a eve
 
 O geógrafo brasileiro Milton Santos, descreve em seu célebre texto "As Cidadanias Mutiladas" que a democracia somente é efetiva quando atinge todo o corpo social, isto é, quando os direitos são desfrutados por todos os cidadãos. Todavia, no contexto atual brasileiro, diante dos desafios ao acesso a uma plataforma de noticias de saúde pública, distanciam a população de direitos a notícias que todos deveriam ter acesso de uma forma simples e eficiente. Neste contexto, faz-se necessário a solução dos desafios para implementar uma plataforma de notícias de saúde pública que seja acessível a todos os brasileiros.
 
+Em primeiro lugar vale a pena ressaltar a desinformação populacional como um dos principais fatores que corroboram para a persistência do problema no que tange o tema plataforma de saúde pública Brasil. Durante a formalização do atual plano educacional proposto na era Vargas no século XX é possível observer a falta de conteúdo na ementa envolvendo temas transversais, como a saúde, direitos e tecnologia. Nesta perspectiva, muitos brasileiros não conhecem os seus direitos relacionados a saúde pública e não possuem experiência para utilizar ferramentas tecnológicas para encontrar informações relevantes sobre notícias desta temática. Diante disso, muitas pessoas não possuem os insumos necessários e precisam de uma plataforma de nóticias confiável para consultar no dia a dia.    
+
 <h2>1. Estratégia de Solução</h2>
 <hr>
 
