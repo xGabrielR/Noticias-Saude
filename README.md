@@ -13,6 +13,11 @@
 
 - [0. Problema de Negócio](#0-problema-de-negócio)
 - [1. Estratégia de Solução](#1-estratégia-de-solução)
+- [2. Ingestão de Dados](#2-ingestão-de-dados)
+  - [2.1. Scraping de Notícias](#21-scraping-de-notícias)
+  - [2.2. Event Driven Dag](#22-Event-Driven-Dag) 
+- [3. Processamento de Dados](#3-processamento-de-dados)
+- [4. Rag com Snowflake](#4-rag-com-snowflake)
 
 <hr>
 
