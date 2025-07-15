@@ -43,3 +43,47 @@ Como as novas publicações de notícias de saúde em fontes oficiais de dados (
 
 Toda a solução de infraestrutura foi desenvolvida com Terraform integrado a AWS + Snowflake, além disso com a utilização do Python, Airflow, DBT e Snowflake Warehouse para as ferramentas de processamento, orquestração e documentação, por fim o Snowflake Cortex Service para a camada de PLN, VectorDB e RAG com Langchain e SQL. 
 
+<h2>2. Ingestão de Dados</h2>
+<hr>
+
+<h3>2.1. Scraping de Notícias</h3>
+
+A primeira etapa da solução foi o desenvolvimento dos crawlers, isto é, o desenvolvimento das aplicações responsáveis pela raspagem dos dados de sites de notícias, a principal fonte de dados utilizada foi o site de notícias da Secretaria de Saúde da cidade de Caçador, Santa Catarina, esse site é um portal de notícias relacionadas a Saúde Pública que são pertinentes a toda a população da cidade de Caçador.
+Como este projeto está totalmente público, sem fins lucrativos e relacionado a estudos, optei em utilizar o site de Caçador inicialmente para os primeiros testes, além disso o site possui o robotx.txt limitando alguns endpoints que não estou raspando, então o projeto não infringe nenhuma regra do site até o momento em que esse projeto foi desenvolvido.
+Os crawlers são executados em tempos intermitentes, ou seja, apareceu uma notícia nova, em algum momento o crawler vai ser executado e coletar essa notícia e armazenar o texto bruto e outros metadados em arquivos no armazenamento de arquivos da Aws, esse armazenamento foi nomeado de Data Lake e esses arquivos são particionados por data na primeira camada do Data Lake chamada de Landing.
+
+<img src="assets/aws_sqs_queue.png">
+
+Quando um novo arquivo chega nesta camada landing, é disparado um indicativo por meio do AWS SQS para a próxima ferramenta da arquitetura, o Airflow.
+
+<h3>2.2. Event Driven Dag</h3>
+
+O Airflow vai ficar aguardando alguma nova mensagem recebida por meio do AWS SQS, caso o Airflow receba essa nova mensagem ele vai ser executado e orquestrar o workflow e subsequentemente a respectiva dag com as devidas tasks.
+
+<img src="assets/airflow_dagrun_asset_trigger.png">
+
+<img src="assets/airflow_asset.png">
+
+Essa funcionalidade desbloqueia um pipeline baseado em eventos, ou seja, a cada nova notícia é executado o Airflow, o airflow é a ferramenta responsável por executar o projeto DBT que por sua vez vai fazer a atualização das tabelas no Snowflake.
+
+<h2>3. Processamento de Dados</h2>
+<hr>
+
+A camada de processamento dos dados é a segunda etapa da solução.
+
+Quando o Airflow é executado, o mesmo dispara consultas SQL por meio do DBT, em outras palavras, o Airflow vai executar consultas SQL, chamadas de funções e execução de procedures na plataforma do Snowflake por meio de um Compute Warehouse.
+
+Os dados dentro da plataforma do Snowflake são nomeados de objetos, esses objetos possuem uma forte política de controle de acesso e também toda a infraestrutura do Snowflake foi levantada por meio do Terraform com módulos que já estão em preview no terraform atualmente.
+
+Esses objetos dentro do Snowflake, alguns deles são tabelas, essas tabelas seguem a modelagem de Lakehouse, as tabelas são organizadas em camadas, Bronze, Silver e Gold.
+
+- Bronze: Os dados são coletados e escritos de forma histórica nesta tabela, particionado por data, essa escrita é realizada por meio de um Python Procedure.
+- Silver: Os dados da camada bronze são então processados e atualizados em tabelas "silvers".
+- Gold: Os dados já limpos da camada silver são então agregados em visões analíticas ou enviesadas para alguma faceta de negócio.
+
+Seguindo a perspectiva anterior, a tabela Gold utilizada no Cortex Service, ou seja, a tabela enviesada para o negócio utilizar como Vector Database esta na camada Gold, é uma tabela processada onde as notícias são quebradas em chunks para a recuperação depois, conforme ilustra a imagem abaixo.
+
+<img src="assets/snowflake_noticias_chunk_table.png">
+
+
+
