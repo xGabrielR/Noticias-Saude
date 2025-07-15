@@ -86,4 +86,18 @@ Seguindo a perspectiva anterior, a tabela Gold utilizada no Cortex Service, ou s
 <img src="assets/snowflake_noticias_chunk_table.png">
 
 
+<h2>4. Rag com Snowflake</h2>
+<hr>
+
+A última etapa do projeto é justamente a elaboração da plataforma de notícias de saúde, para isso foi utilizado o Cortex Service do Snowflake, infelizmente essa solução ainda esta em testes no terraform, então ela foi levantada manualmente utilizando o Snowsight.
+
+A solução do Cortex Service permite ao usuário selecionaer um LLM para ser a ferramenta de geração de embeddings que já esta integrada a tabelas da camada Gold, isto é, o proprio Cortex Service faz a atualização dos embeddings e nos permite disparar perguntas utilizando linguagem natural facilitando a busca e pesquisa de notícias de saúde pública da cidade de Caçador, Santa Catarina.
+
+Por exemplo, considere a seguinte pergunta enviada ao Cortex Service: "Qual foi o custo em reais de materiais para a prática de artes marciais ?".
+
+A coluna GEN da imagem abaixo nada mais é que a resposta da pergunta utilizando pesquisa vetorial e a geração de texto do LLM selecionado dentro da plataforma do Cortex Service do Snowflake.
+
+<img src="assets/snowflake_rag_sql.png">
+
+Dessa forma é possível pessoas leigas realizarem perguntas relacionados a temática de saúde dentro da plataforma e obterem as devidas respostas. 
 
